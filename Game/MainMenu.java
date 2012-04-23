@@ -252,7 +252,7 @@ public class MainMenu extends JPanel implements ActionListener, ListSelectionLis
             int aiType = (int)(Math.random()*3);
             Point randPoint = new Point((int)(Math.random()*fd.width*0.9 +0.05),(int)(Math.random()*fd.height*0.9 +0.05));
             GameController.TankManager.TankStyle at = new GameController.TankManager.TankStyle("AI " + String.valueOf(i+1), Color.RED.darker(), "A" + String.valueOf(i+1), randPoint, 0, aiType);
-            SimplisticAI ac = new SimplisticAI(at.getTank());
+            SimplisticAI ac = new SimplisticAI(at.getTank(), fd);
             tm.addTank(at, ac);
         }
         
@@ -339,7 +339,7 @@ public class MainMenu extends JPanel implements ActionListener, ListSelectionLis
         hostNameT = new JTextField("X");
         hostNameT.setBounds((int)(width*0.6), (int)(height/2 + Math.max(height*0.02, 20)*2), (int)Math.max(width*0.1, 170), (int)(Math.max(height*0.02, 20)));
         
-        aiT = new JTextField("6");
+        aiT = new JTextField("1");
         aiT.setBounds((int)(width*0.6), (int)(height/2 - Math.max(height*0.02, 20)), (int)Math.max(width*0.1, 170), (int)(Math.max(height*0.02, 20)));
         
         portL = new JLabel("PORT NUMBER");

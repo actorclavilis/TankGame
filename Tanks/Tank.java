@@ -23,6 +23,7 @@ public abstract class Tank
     public final long tankID = (long)(Long.MAX_VALUE*Math.random());
     protected int life;
     protected int power = 0;
+    protected String message = "";
     
     public Tank(Color _tankColor, String _tankName, String _tankNumber, Point _centerPoint, double _tankAngle, Rectangle2D bound, double _tankSpeed, int _life)
     {
@@ -155,7 +156,8 @@ public abstract class Tank
         g.fill(barrelShape);   
         g.drawString(tankNumber, (int)(centerPoint.getX()-tankWidth*0.9), (int)(centerPoint.getY()-tankHeight*0.7)); 
         g.drawString(Integer.toString(power), (int)(centerPoint.x-tankWidth*0.1), (int)(centerPoint.getY()-tankHeight*0.7));
-
+        g.drawString(message, (int)(centerPoint.x-tankWidth*0.1),(int)(centerPoint.y-tankHeight*0.3));
+        
         if(defense)
         {
             g.fill(shieldShape);
@@ -262,5 +264,9 @@ public abstract class Tank
     public boolean isDead()
     {
         return death;
+    }
+    
+    public void setMessage(String _msg) {
+        message = _msg;
     }
 }

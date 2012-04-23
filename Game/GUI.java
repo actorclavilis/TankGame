@@ -202,6 +202,19 @@ public class GUI extends JPanel
     {
         return Collections.unmodifiableSet(tanks);
     }
+    public synchronized Object tanksMutex() 
+    {
+        return (Object)tanks;
+    }
+    
+    public synchronized Set bullets()
+    {
+        return Collections.unmodifiableSet(bulls);
+    }
+    public synchronized Object bulletsMutex() 
+    {
+        return (Object)bulls;
+    }
 
     public synchronized void updateState(Set _tanks, Set _bulls) {
         tanks.addAll(_tanks);

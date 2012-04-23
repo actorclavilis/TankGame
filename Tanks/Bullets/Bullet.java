@@ -95,4 +95,19 @@ public abstract class Bullet
     public synchronized boolean equals(Object o) {
         return (Bullet.class.isInstance(o) && Bullet.class.cast(o).bulletID == this.bulletID);
     }
+
+    public double distanceFrom2(double _x, double _y) {
+        return Math.hypot(x-_x, y-_y);
+    }
+
+    public double x() {
+        return x;
+    }
+    public double y() {
+        return y;
+    }
+
+    public Tank parent() {
+        return parent;
+    }
 }
